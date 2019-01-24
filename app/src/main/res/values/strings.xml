@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Consulta de Notas</string>
+    <string name="tv_bienvenida">Bienvenido a la consulta de notas por asignatura para alumnos de segundo curso de DAM</string>
+    <string name="et_asig_hint">Introduce la asignatura</string>
+    <string name="btn_consultar">Consultar notas</string>
+
+    <string name="toast_error_vacio">No puedes dejar el campo vacio</string>
+    <string name="toast_error_asignatura">No existen datos de esa asignatura</string>
+    <string name="menu_inicio">Inicio</string>
+    <string name="menu_salir">Salir</string>
+
+    <!--Activity 2 ActivityListaAlumnos-->
+    <string name="dialgo_mensaje">¿Seguro que quiere salir?</string>
+    <string name="dialog_salir">Salir de la aplicación</string>
+    <string name="dialog_permanecer">Permanecer en la aplicación</string>
+    <string name="tv_nombreAl">Nombre de alumno: %s</string>
+    <string name="tv_nota_examen">Nota Examen: %.2f</string>
+    <string name="tv_nota_tareas">Nota Tareas: %.2f</string>
+    <string name="tv_nota_actitud">Nota Actitud: %.2f</string>
+</resources>

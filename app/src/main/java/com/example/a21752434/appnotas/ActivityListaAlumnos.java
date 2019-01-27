@@ -39,7 +39,7 @@ public class ActivityListaAlumnos extends AppCompatActivity {
 
         //TODO esta opción es mejor?
         listaResultado = getIntent().<AlumnoAsig>getParcelableArrayListExtra("LISTA_RESULTADO");
-        adapterN = new AdaptadorNotas(listaResultado);
+        adapterN = new AdaptadorNotas(listaResultado, getApplicationContext());
         adapterN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

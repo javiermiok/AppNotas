@@ -6,15 +6,53 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
+
+import com.example.a21752434.appnotas.javaBean.AlumnoAsig;
+
+import java.util.ArrayList;
 
 public class ActivityListaAlumnos extends AppCompatActivity {
+
+    //Nuevo
+    private RecyclerView recycleV;
+    private LinearLayoutManager layoutM;
+    private AdaptadorNotas adapterN;
+    private ArrayList<AlumnoAsig> listaResultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_alumnos);
+
+        //Nuevo
+        recycleV = findViewById(R.id.rvListaAlumnos);
+        recycleV.setHasFixedSize(true);
+
+        layoutM = new LinearLayoutManager(this);
+        recycleV.setLayoutManager(layoutM);
+
+        //TODO esta opción es mejor?
+        listaResultado = getIntent().<AlumnoAsig>getParcelableArrayListExtra("LISTA_RESULTADO");
+        adapterN = new AdaptadorNotas(listaResultado);
+        adapterN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String msg = "Seleccionada la opción " + recycleV.getChildAdapterPosition(v) ;
+                Toast.makeText(ActivityListaAlumnos.this,msg,Toast.LENGTH_SHORT).show();
+
+                //Pasar a la ventana PantallaNotasALumno
+                Intent i = new Intent(ActivityListaAlumnos.this, PantallaNotasAlumno.class);
+                i.putExtra("SELECCION", listaResultado.get(recycleV.getChildAdapterPosition(v)));
+                startActivity(i);
+            }
+        });
+        recycleV.setAdapter(adapterN);
     }
 
     /**

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondo"
+    android:orientation="vertical"
+    android:padding="@dimen/margen_layout"
+    tools:context=".PantallaNotasAlumno">
+
+    <TextView
+        android:id="@+id/tvAsignaturaPantalla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_layout"
+        android:text="TextView"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/titulo_texto" />
+
+    <TextView
+        android:id="@+id/tvAlumnoPantalla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_layout"
+        android:text="TextView"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/titulo_texto" />
+
+    <TextView
+        android:id="@+id/tvTareaPantalla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margen_layout"
+        android:layout_marginTop="@dimen/margen_layout"
+        android:text="TextView"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/tam_18" />
+
+    <TextView
+        android:id="@+id/tvExamenPantalla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margen_layout"
+        android:layout_marginTop="@dimen/margen_layout"
+        android:text="TextView"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/tam_18" />
+
+    <TextView
+        android:id="@+id/tvActitudPantalla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margen_layout"
+        android:layout_marginTop="@dimen/margen_layout"
+        android:text="TextView"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/tam_18" />
+
+    <Button
+        android:id="@+id/btnCalculoPantalla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_layout"
+        android:onClick="calcualr"
+        android:text="@string/btn_calculo_pantalla"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/tam_18" />
+
+    <TextView
+        android:id="@+id/tvNotaFinalPantalla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_layout"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/tam_18"
+        android:visibility="invisible" />
+</LinearLayout>

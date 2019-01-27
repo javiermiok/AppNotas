@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class ListadoNotasAlumnos {
 
-    ArrayList<AlumnoAsig> lista;
+    private ArrayList<AlumnoAsig> lista;
 
     public ListadoNotasAlumnos() {
         lista = new ArrayList<AlumnoAsig>();

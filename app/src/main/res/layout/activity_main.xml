@@ -17,7 +17,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:text="@string/tv_bienvenida"
-        android:textSize="24sp" />
+        android:textSize="@dimen/titulo_texto"
+        android:layout_alignParentLeft="true" />
 
     <EditText
         android:id="@+id/etAsignatura"
@@ -28,7 +29,8 @@
         android:layout_marginBottom="104dp"
         android:ems="10"
         android:hint="@string/et_asig_hint"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:layout_alignLeft="@+id/tvBienvenida" />
 
     <Button
         android:id="@+id/btnConsulta"
@@ -40,5 +42,7 @@
         android:layout_marginBottom="23dp"
         android:onClick="clickConsultar"
         android:text="@string/btn_consultar"
-        android:textSize="18sp" />
+        android:textSize="@dimen/tam_18"
+        android:layout_alignLeft="@+id/tvBienvenida"
+        android:layout_marginLeft="-1dp" />
 </RelativeLayout>

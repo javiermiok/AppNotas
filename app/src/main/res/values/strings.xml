@@ -17,4 +17,6 @@
     <string name="tv_nota_examen">Nota Examen: %.2f</string>
     <string name="tv_nota_tareas">Nota Tareas: %.2f</string>
     <string name="tv_nota_actitud">Nota Actitud: %.2f</string>
+    <string name="tv_nota_final">Nota Final: %.2f</string>
+    <string name="btn_calculo_pantalla">Calcular nota final</string>
 </resources>

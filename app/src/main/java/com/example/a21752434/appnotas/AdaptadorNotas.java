@@ -11,10 +11,14 @@ import com.example.a21752434.appnotas.javaBean.AlumnoAsig;
 
 import java.util.ArrayList;
 
-public class AdaptadorNotas extends RecyclerView.Adapter<AdaptadorNotas.NotasViewHolder> {
+public class AdaptadorNotas extends RecyclerView.Adapter<AdaptadorNotas.NotasViewHolder>
+        implements View.OnClickListener  {
 
     private ArrayList<AlumnoAsig> datos;
+    //Nuevo
+    private View.OnClickListener listener;
 
+    //TODO Añadir contexto como parámetro
     public AdaptadorNotas(ArrayList<AlumnoAsig> datos) {
         this.datos = datos;
     }
@@ -23,6 +27,7 @@ public class AdaptadorNotas extends RecyclerView.Adapter<AdaptadorNotas.NotasVie
     @Override
     public NotasViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.alumno_item, viewGroup,false);
+        v.setOnClickListener(this);
         NotasViewHolder nvh = new NotasViewHolder(v);
         return nvh;
     }
@@ -36,6 +41,19 @@ public class AdaptadorNotas extends RecyclerView.Adapter<AdaptadorNotas.NotasVie
     public int getItemCount() {
         return datos.size();
     }
+
+    @Override
+    public void onClick(View v) {
+        if(listener != null) {
+            listener.onClick(v);
+        }
+    }
+
+    public void setOnClickListener(View.OnClickListener listener) {
+        this.listener = listener;
+    }
+
+    /*--------------------               CLASE INTERNA               -----------------------------*/
 
     public static class NotasViewHolder extends RecyclerView.ViewHolder {
         private TextView tvNombre;
@@ -51,6 +69,7 @@ public class AdaptadorNotas extends RecyclerView.Adapter<AdaptadorNotas.NotasVie
             tvNotaActitud = itemView.findViewById(R.id.tvNotaActitud);
         }
 
+        //TODO getString(String.format());...
         public void bindPatron(AlumnoAsig alum) {
             tvNombre.setText(alum.getNombre());
             tvNotaExamen.setText(String.valueOf(alum.getNotaExamen()));
@@ -58,4 +77,5 @@ public class AdaptadorNotas extends RecyclerView.Adapter<AdaptadorNotas.NotasVie
             tvNotaActitud.setText(String.valueOf(alum.getNotaActitud()));
         }
     }
+
 }
